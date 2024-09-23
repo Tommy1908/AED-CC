@@ -2,43 +2,43 @@ package aed;
 
 class ArregloRedimensionableDeRecordatorios {
     
-    private Recordatorio[] _Recordatorios;
+    private Recordatorio[] _recordatorios;
 
     public ArregloRedimensionableDeRecordatorios() {
-        _Recordatorios = new Recordatorio[0];
+        _recordatorios = new Recordatorio[0];
     }
 
     public int longitud() {
-        return _Recordatorios.length;
+        return _recordatorios.length;
     }
 
     public void agregarAtras(Recordatorio i) {
-        Recordatorio[] nuevo = new Recordatorio[_Recordatorios.length + 1];
+        Recordatorio[] nuevo = new Recordatorio[_recordatorios.length + 1];
 
-        for (int j = 0; j < _Recordatorios.length; j++){
-            nuevo[j] = _Recordatorios[j];
+        for (int j = 0; j < _recordatorios.length; j++){
+            nuevo[j] = _recordatorios[j];
         }
         nuevo[nuevo.length - 1] = i;
 
-        _Recordatorios = nuevo;
+        _recordatorios = nuevo;
     }
 
     public Recordatorio obtener(int i) {
-        return _Recordatorios[i];
+        return _recordatorios[i];
     }
 
     public void quitarAtras() {
-        Recordatorio[] nuevo = new Recordatorio[_Recordatorios.length -1];
+        Recordatorio[] nuevo = new Recordatorio[_recordatorios.length -1];
 
-        for (int i = 0; i < _Recordatorios.length - 1; i++){
-            nuevo[i] = _Recordatorios[i];
+        for (int i = 0; i < _recordatorios.length - 1; i++){
+            nuevo[i] = _recordatorios[i];
         }
 
-        _Recordatorios = nuevo;
+        _recordatorios = nuevo;
     }
 
     public void modificarPosicion(int indice, Recordatorio valor) {
-        _Recordatorios[indice] = valor;
+        _recordatorios[indice] = valor;
     }
 
     public ArregloRedimensionableDeRecordatorios(ArregloRedimensionableDeRecordatorios vector) {
@@ -49,14 +49,14 @@ class ArregloRedimensionableDeRecordatorios {
             //Recordatorio r = vector.obtener(i); con eso da aliasing
             copia[i] = r;
         }
-        _Recordatorios = copia;
+        _recordatorios = copia;
     }
 
     public ArregloRedimensionableDeRecordatorios copiar() {
         ArregloRedimensionableDeRecordatorios res = new ArregloRedimensionableDeRecordatorios();
 
         for (int i = 0; i < longitud(); i++){
-            Recordatorio r = new Recordatorio(_Recordatorios[i].mensaje(),_Recordatorios[i].fecha(),_Recordatorios[i].horario());
+            Recordatorio r = new Recordatorio(_recordatorios[i].mensaje(),_recordatorios[i].fecha(),_recordatorios[i].horario());
             res.agregarAtras(r);
         }
         return res;

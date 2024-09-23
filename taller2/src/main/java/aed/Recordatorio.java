@@ -35,9 +35,9 @@ public class Recordatorio {
         }
         Recordatorio otroRecordatorio = (Recordatorio) otro;
         //cambiar por la func
-        boolean fechaIgual = _fecha.equals(otroRecordatorio._fecha);
-        boolean horaIgual = _horario.equals(otroRecordatorio._horario);
-        boolean mensajeIgual = _mensaje == otroRecordatorio._mensaje;
+        boolean fechaIgual = _fecha.equals(otroRecordatorio.fecha());
+        boolean horaIgual = _horario.equals(otroRecordatorio.horario());
+        boolean mensajeIgual = _mensaje == otroRecordatorio.mensaje();
 
         return fechaIgual && horaIgual && mensajeIgual;
     }
