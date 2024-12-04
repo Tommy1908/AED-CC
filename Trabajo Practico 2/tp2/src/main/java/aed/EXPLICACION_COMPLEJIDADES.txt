@@ -1,0 +1,40 @@
+Handles:
+    En todo BestEffort solo se crean handles de tamaño 1 y 2, si bien pueden tomar cualquier tamaño lo cual seria O(n) en nuestro caso
+    Solo es O(1) porque el tamaño es fijo.
+
+Nuevo Sistema:
+    Como llamamos al primer for, hacemos que i llegue hasta trasalados.length y dentro de ese for vamos metiendo los trasalados en una secuencia y luego de crear la secuencia pasamos la secuencia a un heap. Eso genera que sea una complijidad O(|T|)
+    Luego en stats hacemos los mimso pero con las ciudades, y asi al final nos queda una complijidad de O(|C|+|T|)
+
+RegistrarTraslados: 
+    Se hace todo adentro de un for asi que seria O(|traslados|) y lo multiplicamos por lo de adentro, que en este caso encolar un objeto en un handle es O(log T).
+    Como encola 2 veces, sigue siendo O(log |T|)
+    Es decir, en el peor caso la complejidad es O(|traslado| log |T|)
+
+DespacharMasRedituables:
+    Como tenemos un while cuenta la cantidad de despacho se nos hace O(n).
+    Dentro del while, por cada iteracion llamamos a desencolar max y eliminar que son funciones de complejidad O(log |T|)
+    Luego, dentro del while tambien llamamos a actualizarEstadisticas que lo que hace es indexar en la variabels ya creadas y 
+    modificar un heap por lo que tiene complejidad O(log|C|)
+
+    Por lo que quedaria finalmente de O(n(log|T|+log|C|))
+    
+DespacharMasAntiguos
+    Como tenemos un while cuenta la cantidad de despacho se nos hace O(n).
+    Dentro del while, por cada iteracion llamamos a desencolar max y eliminar que son funciones de complejidad O(log |T|)
+    Luego, dentro del while tambien llamamos a actualizarEstadisticas que lo que hace es indexar en la variabels ya creadas y 
+    modificar un heap por lo que tiene complejidad O(log|C|)
+    
+    Por lo que quedaria finalmente de O(n(log|T|+log|C|))
+
+CiudadConMayorSuperavit:
+    Esto es O(1) ya que solo devuelve una variable ya definida
+
+CiudadesConMayorGanancia:
+    Esto es O(1) ya que solo devuelve una variable ya definida
+
+CiudadesConMayorPerdida:
+    Esto es O(1) ya que solo devuelve una variable ya definida
+    
+GananciaPromedioPorTraslado:
+    Esto es O(1) ya que solo devuelve una variable ya definida 
